@@ -1,5 +1,5 @@
 <?php
 
-    $zaqueu ="viado";   
-    $pedro = "lindao";
+    $zaqueu =" novo queixinho";   
+    $pedro = "mais lindo de todos";
 ?>
