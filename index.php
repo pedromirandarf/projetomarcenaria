@@ -1,4 +1,5 @@
 <?php
     $teste = 2;
-    $teste1 = "ok";
+    $teste1 = "ok ok";
+    
 ?>
