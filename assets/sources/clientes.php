@@ -11,12 +11,12 @@ class Clientes{
 
     function __construct()
     {
-        $nome = NULL;
-        $email = NULL;
-        $cpf = NULL;
-        $rg = NULL;
-        $telefone = NULL;
-        $endereco = NULL;
+        $this->nome = NULL;
+        $this->email = NULL;
+        $this->cpf = NULL;
+        $this->rg = NULL;
+        $this->telefone = NULL;
+        $this->endereco = NULL;
 
     }
 
@@ -45,7 +45,7 @@ class Clientes{
         $result = mysql_query($query);
         
         if ($result)
-        
+
     }
 }
 

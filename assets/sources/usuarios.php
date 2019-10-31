@@ -9,10 +9,10 @@ class Usuarios{
 
     function __construct()
     {
-        $nome = NULL;
-        $email = NULL;
-        $cpf = NULL;
-        $senha = NULL;
+        $this->nome = NULL;
+        $this->email = NULL;
+        $this->cpf = NULL;
+        $this->senha = NULL;
 
     }
 

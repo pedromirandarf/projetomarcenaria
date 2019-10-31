@@ -11,12 +11,12 @@ class Orcamento{
 
     function __construct()
     {
-        $data = NULL;
-        $validade = NULL;
-        $precoTotal = NULL;
-        $obs = NULL;
-        $idUsuario = NULL;
-        $idCliente = NULL;
+        $this->data = NULL;
+        $this->validade = NULL;
+        $this->precoTotal = NULL;
+        $this->obs = NULL;
+        $this->idUsuario = NULL;
+        $this->idCliente = NULL;
     }
 
     function insereOrcamentoBD(Orcamento $orcamento)
