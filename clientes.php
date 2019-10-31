@@ -1,18 +1,20 @@
 <?php
 
-class Usuarios{
+class Clientes{
 
     $nome;
-    $senha;
-    $cpf;
     $email;
+    $cpf;
+    $rg;
+    $telefone;
+    $endereco;
 
     function __construct()
     {
-
+        
     }
-
 }
+
 
 
 ?>
