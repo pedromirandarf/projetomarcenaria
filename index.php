@@ -50,30 +50,22 @@ $BASE_LOGIN = <<<EOF
                   </a>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                    <form action="views/dashboard.php" method="POST">
                     
                       <div class="form-group">
                           <label for="exampleInputEmail1">Login</label>
-                
-                          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="nome.sobrenome@atlasjr.com.br">
-                    
-                          
-                        
+                          <input type="email" class="form-control" name="InputEmail" aria-describedby="emailHelp" placeholder="nome.sobrenome@atlasjr.com.br">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Senha</label>
-                          
-                          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                        
-                         
+                          <input type="password" class="form-control" name="InputPassword" placeholder="Password">
                         </div>
                         <div class="checkbox">
-                            <label>
-                             
-                            </label>
+                             <input type="checkbox" class="checkbox" name="InputConectado">
+                             <label for="mantenhaconectado">Me Mantenha Conectado</label>
                           </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
-                        <button class="btn btn-primary" href="index.html">Esqueci a Senha</button>
+                        <button class="btn btn-primary" href="index.php">Esqueci a Senha</button>
                         
                         
                       </form>
