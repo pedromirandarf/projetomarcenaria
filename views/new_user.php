@@ -1,4 +1,4 @@
-<?php
+<?php 
 $data = <<<EOF
 <!DOCTYPE html>
 <html lang="en">
@@ -79,12 +79,11 @@ $data = <<<EOF
               <div class="col-md-6">
                 <div class="form-group">
                   <label class="bmd-label-floating">CPF</label>
-                  <input type="number" name="CPF" class="form-control">
+                  <input type="text" name="CPF" class="form-control">
                 </div>
               </div>
             </div>
             <button type="submit" class="btn btn-primary pull-right">Cadastrar</button>
-            <div class="clearfix"></div>
           </form>
         </div>
       </div>

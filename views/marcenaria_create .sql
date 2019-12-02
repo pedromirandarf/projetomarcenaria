@@ -1,10 +1,10 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2019-10-29 19:18:59.111
+-- Last modification date: 2019-12-01 23:22:10.911
 
 -- tables
 -- Table: Clientes
 CREATE TABLE Clientes (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     nome varchar(100) NOT NULL,
     email varchar(50) NOT NULL,
     rg varchar(50) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE Clientes (
 
 -- Table: Lista
 CREATE TABLE Lista (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     quantidade real(10,5) NOT NULL,
     orcamento_id int NOT NULL,
     produtos_id int NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE Lista (
 
 -- Table: Orcamento
 CREATE TABLE Orcamento (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     data varchar(20) NOT NULL,
     validade varchar(20) NOT NULL,
     preco_total real(10,5) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE Orcamento (
 
 -- Table: Pagamentos
 CREATE TABLE Pagamentos (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     data varchar(10) NOT NULL,
     valor real(10,5) NOT NULL,
     obs varchar(1000) NULL,
@@ -49,7 +49,7 @@ CREATE TABLE Pagamentos (
 
 -- Table: Produtos
 CREATE TABLE Produtos (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     nome varchar(100) NOT NULL,
     serie varchar(100) NOT NULL,
     lote varchar(100) NOT NULL,
@@ -64,11 +64,12 @@ CREATE TABLE Produtos (
 
 -- Table: Usuarios
 CREATE TABLE Usuarios (
-    id int NOT NULL,
+    id int NOT NULL AUTO_INCREMENT,
     nome varchar(100) NOT NULL,
     senha varchar(100) NOT NULL,
     cpf varchar(17) NOT NULL,
     endereco varchar(150) NOT NULL,
+    email varchar(150) NOT NULL,
     CONSTRAINT Usuarios_pk PRIMARY KEY (id)
 );
 

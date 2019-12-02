@@ -50,26 +50,27 @@ $BASE_LOGIN = <<<EOF
                   </a>
                 </div>
                 <div class="card-body">
-                    <form action="views/dashboard.php" method="POST">
+                    <form action="login.php" method="POST">
                     
                       <div class="form-group">
-                          <label for="exampleInputEmail1">Login</label>
-                          <input type="email" class="form-control" name="InputEmail" aria-describedby="emailHelp" placeholder="nome.sobrenome@atlasjr.com.br">
+                          <label for="email">Login</label>
+                          <input type="email" class="form-control" name="Login" aria-describedby="emailHelp" placeholder="nome.sobrenome@atlasjr.com.br">
                         </div>
                         <div class="form-group">
                           <label for="exampleInputPassword1">Senha</label>
-                          <input type="password" class="form-control" name="InputPassword" placeholder="Password">
+                          <input type="password" class="form-control" name="Senha" placeholder="Password">
                         </div>
                         <div class="checkbox">
-                             <input type="checkbox" class="checkbox" name="InputConectado">
+                             <input type="checkbox" class="checkbox" name="Conectado">
                              <label for="mantenhaconectado">Me Mantenha Conectado</label>
                           </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
-                        <button class="btn btn-primary" href="index.php">Esqueci a Senha</button>
-                        
+                        <button class="btn btn-primary">Esqueci a Senha</button>
+                      
+
                         
                       </form>
-                      <a class="link" href="">
+                      <a class="link" href="views/new_user.php">
                           <i class="material-icons">person</i>
                           <p>Cadastro</p>
                         </a>
