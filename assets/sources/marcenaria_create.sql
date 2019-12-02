@@ -56,7 +56,7 @@ CREATE TABLE produtos (
     tipo varchar(100) NOT NULL,
     fornecedor varchar(100) NOT NULL,
     preco_compra real(10,5) NOT NULL,
-    preco_compra real(10,5) NOT NULL,
+    preco_venda real(10,5) NOT NULL,
     quantidade real(10,5) NOT NULL,
     obs varchar(1000) NULL,
     CONSTRAINT produtos_pk PRIMARY KEY (id)

@@ -57,10 +57,16 @@ $content = <<<EOF
           </li>
           <li class="nav-item ">
           <a class="nav-link" href="./produtos_cadastro.php">
-            <i class="material-icons">face</i>
-            <p>Cadastro de Clientes </p>
+            <i class="material-icons">store</i>
+            <p>Cadastro de Produtos </p>
           </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./produtos_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Produtos</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

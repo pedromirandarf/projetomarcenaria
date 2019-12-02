@@ -57,10 +57,16 @@ $content = <<<EOF
           </li>
           <li class="nav-item ">
           <a class="nav-link" href="./produtos_cadastro.php">
-            <i class="material-icons">face</i>
-            <p>Cadastro de Clientes </p>
+            <i class="material-icons">store</i>
+            <p>Cadastro de Produtos </p>
           </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./produtos_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Produtos</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -69,7 +75,7 @@ $content = <<<EOF
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Cadastro de Clientes</a>
+            <a class="navbar-brand" href="#pablo">Lista de Clientes</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>

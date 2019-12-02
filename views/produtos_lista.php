@@ -43,25 +43,25 @@ $content = <<<EOF
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item  ">
             <a class="nav-link" href="./clientes_cadastro.php">
               <i class="material-icons">face</i>
               <p>Cadastro de Clientes </p>
             </a>
           </li>
           <li class="nav-item">
-          <a class="nav-link" href="./clientes_lista.php">
-            <i class="material-icons">content_paste</i>
-            <p>Listagem de Clientes</p>
-          </a>
+            <a class="nav-link" href="./clientes_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Clientes</p>
+            </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
           <a class="nav-link" href="./produtos_cadastro.php">
             <i class="material-icons">store</i>
             <p>Cadastro de Produtos </p>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
             <a class="nav-link" href="./produtos_lista.php">
               <i class="material-icons">content_paste</i>
               <p>Listagem de Produtos</p>
@@ -75,7 +75,7 @@ $content = <<<EOF
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Cadastro de Produtos</a>
+            <a class="navbar-brand" href="#pablo">Cadastro de Clientes</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -131,82 +131,58 @@ $content = <<<EOF
       
       <div class="content">
       <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Cadastro de Produtos</h4>
-              <p class="card-category">Insira com Atenção os dados</p>
-            </div>
-            <div class="card-body">
-              <form action="conexao/conect_produtos.php" method="POST">
-                <div class="row"> 
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Nome do Produto</label>
-                      <input type="text" name="Nome" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Número de Serie</label>
-                      <input type="text" name="Serie" class="form-control">
-                    </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Produtos Cadastrados</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Nome
+                        </th>
+                        <th>
+                          Serie
+                        </th>
+                        <th>
+                          Lote
+                        </th>
+                        <th>
+                          Tipo
+                        </th>
+                        <th>
+                          Fornecedor
+                        </th>
+                        <th>
+                          Preço de Compra 
+                        </th>
+                        <th>
+                          Preço de Venda 
+                        </th>
+                        <th>
+                          Quantidade
+                        </th>
+                        <th>
+                          Observações
+                        </th>
+                      </thead>
+EOF;
+
+
+$content2= <<<EOF
+                    </table>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Lote</label>
-                      <input type="text" name="Lote" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Tipo</label>
-                      <input type="text" name="Fornecedor" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Preço de Compra</label>
-                      <input type="text" name="PrecoC" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Preço de Venda</label>
-                      <input type="text" name="PrecoV" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Quantidade</label>
-                      <input type="number" name="Quantidade" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Observação</label>
-                      <input type="text" name="Obs" class="form-control" >
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <br>
-                <button type="submit" class="btn btn-primary pull-left">Salvar</button>
-                <div class="clearfix"></div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
-        
-      </div>
-    </div>
       </div>
       <footer class="footer">
         <div class="container-fluid">
@@ -279,13 +255,45 @@ $content = <<<EOF
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
 </body>
-
 </html>
 EOF;
 
 $login_cookie = $_COOKIE['login'];
     if(isset($login_cookie)){
-      echo $content;
+      $conn = mysqli_connect('localhost','root','','marcenaria');
+      mysqli_set_charset($conn, 'utf8');
+
+if ($conn->connect_error) {
+  die("Por algum motivo a inscrição não foi efetuada, tente novamente mais tarde.");
+}
+$sql = "SELECT nome,serie,lote,tipo,fornecedor,preco_compra,preco_venda,quantidade,obs FROM produtos";
+$resultado = $conn->query($sql);
+
+$aux = 1;
+while ($row = $resultado->fetch_assoc()){
+		$nome[$aux] = $row["nome"];
+		$serie[$aux] = $row["serie"];
+		$lote[$aux] = $row["lote"];
+		$tipo[$aux] = $row["tipo"];
+		$fornecedor[$aux] = $row["fornecedor"];
+    $preco_compra[$aux] = $row["preco_compra"];
+    $preco_venda[$aux] = $row["preco_venda"];
+    $quantidade[$aux] = $row["quantidade"];
+    $obs[$aux] = $row["obs"];
+		$aux++;
+}
+$aux2 = 1;
+$aux = $aux -1;
+echo $content;
+echo "<tbody>";
+while($aux2!=($aux+1))
+{
+	echo "<tr><td>".$aux2."<td>".$nome[$aux2]."</td><td>".$serie[$aux2]."</td><td>".$lote[$aux2]."</td><td>".$tipo[$aux2]."</td><td>".
+	$fornecedor[$aux2]."</td><td>".$preco_compra[$aux2]."</td><td>".$preco_venda[$aux2]."</td><td>".$quantidade[$aux2]."</td><td>".$obs[$aux2]."</td></tr>";
+	$aux2++;
+}
+echo "</tbody>";
+echo $content2;
     }else{
       echo"Bem-Vindo, convidado <br>";
       echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";

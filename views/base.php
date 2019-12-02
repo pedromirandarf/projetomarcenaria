@@ -43,24 +43,30 @@ $BASE_DASH= <<<EOF
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item  ">
             <a class="nav-link" href="./clientes_cadastro.php">
               <i class="material-icons">face</i>
-              <p>Cadastro </p>
+              <p>Cadastro de Clientes </p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Tabelas</p>
-            </a>
+          <li class="nav-item">
+          <a class="nav-link" href="./clientes_lista.php">
+            <i class="material-icons">content_paste</i>
+            <p>Listagem de Clientes</p>
+          </a>
           </li>
           <li class="nav-item ">
           <a class="nav-link" href="./produtos_cadastro.php">
-            <i class="material-icons">face</i>
-            <p>Cadastro de Clientes </p>
+            <i class="material-icons">store</i>
+            <p>Cadastro de Produtos </p>
           </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./produtos_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Produtos</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

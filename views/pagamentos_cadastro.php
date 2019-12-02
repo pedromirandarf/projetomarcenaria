@@ -43,7 +43,7 @@ $content = <<<EOF
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active ">
             <a class="nav-link" href="./clientes_cadastro.php">
               <i class="material-icons">face</i>
               <p>Cadastro de Clientes </p>
@@ -55,7 +55,7 @@ $content = <<<EOF
             <p>Listagem de Clientes</p>
           </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item ">
           <a class="nav-link" href="./produtos_cadastro.php">
             <i class="material-icons">store</i>
             <p>Cadastro de Produtos </p>
@@ -75,7 +75,7 @@ $content = <<<EOF
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Cadastro de Produtos</a>
+            <a class="navbar-brand" href="#pablo">Novo Pagamento</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -135,64 +135,52 @@ $content = <<<EOF
         <div class="col-md-12">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h4 class="card-title">Cadastro de Produtos</h4>
+              <h4 class="card-title">Novo Pagamento</h4>
               <p class="card-category">Insira com Atenção os dados</p>
             </div>
             <div class="card-body">
-              <form action="conexao/conect_produtos.php" method="POST">
+              <form action="conexao/conect_pagamentos.php" method="POST">
                 <div class="row"> 
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Nome do Produto</label>
-                      <input type="text" name="Nome" class="form-control">
+                      <label class="bmd-label-floating">Data</label>
+                      <input type="date" name="Data" class="form-control">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Número de Serie</label>
-                      <input type="text" name="Serie" class="form-control">
+                      <label class="bmd-label-floating">Valor</label>
+                      <input type="number" name="Valor" class="form-control">
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-6">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Lote</label>
-                      <input type="text" name="Lote" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Tipo</label>
-                      <input type="text" name="Fornecedor" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Preço de Compra</label>
-                      <input type="text" name="PrecoC" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Preço de Venda</label>
-                      <input type="text" name="PrecoV" class="form-control">
+                      <label class="bmd-label-floating">Forma de Pagemento</label>
+                      <input type="text" name="Forma" class="form-control">
                     </div>
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-3">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Quantidade</label>
-                      <input type="number" name="Quantidade" class="form-control">
-                    </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Cliente</label>
+                    <input type="text" name="Cliente" class="form-control">
                   </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Funcionário</label>
+                    <input type="text" name="Usuario" class="form-control">
+                  </div>
+                </div>
                 </div>
                 <div class="row">
                   <div class="col-md-12">
                     <div class="form-group">
-                      <label class="bmd-label-floating">Observação</label>
-                      <input type="text" name="Obs" class="form-control" >
+                      <label class="bmd-label-floating">Observações</label>
+                      <input type="text" name="Obs" class="form-control">
                     </div>
                   </div>
                 </div>
