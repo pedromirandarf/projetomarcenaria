@@ -1,6 +1,6 @@
 <?php
 
-$BASE_DASH= <<<EOF
+$content = <<<EOF
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,23 +37,23 @@ $BASE_DASH= <<<EOF
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+          <li class="nav-item  ">
+            <a class="nav-link" href="./dashboard.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active ">
             <a class="nav-link" href="./clientes_cadastro.php">
               <i class="material-icons">face</i>
-              <p>Cadastro </p>
+              <p>Cadastro de Clientes </p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./tables.html">
-              <i class="material-icons">content_paste</i>
-              <p>Tabelas</p>
-            </a>
+          <li class="nav-item">
+          <a class="nav-link" href="./clientes_lista.php">
+            <i class="material-icons">content_paste</i>
+            <p>Listagem de Clientes</p>
+          </a>
           </li>
           <li class="nav-item ">
           <a class="nav-link" href="./produtos_cadastro.php">
@@ -69,7 +69,7 @@ $BASE_DASH= <<<EOF
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Dashboard</a>
+            <a class="navbar-brand" href="#pablo">Cadastro de Clientes</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -124,7 +124,71 @@ $BASE_DASH= <<<EOF
       <!-- End Navbar -->
       
       <div class="content">
-       $content
+      <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Cadastro de Clientes</h4>
+              <p class="card-category">Insira com Atenção os dados</p>
+            </div>
+            <div class="card-body">
+              <form action="conect_clientes.php" method="POST">
+                <div class="row"> 
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Nome Completo</label>
+                      <input type="text" name="Nome" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Email</label>
+                      <input type="email" name="Email" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">RG</label>
+                      <input type="text" name="RG" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">CPF</label>
+                      <input type="text" name="CPF" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Endereço</label>
+                      <input type="text" name="Endereco" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Telefone (DDD)9XXXX-XXXX</label>
+                      <input type="text" name="Telefone" class="form-control" >
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary pull-left">Salvar</button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
       </div>
       <footer class="footer">
         <div class="container-fluid">
@@ -199,8 +263,17 @@ $BASE_DASH= <<<EOF
 </body>
 
 </html>
-
 EOF;
 
-echo $BASE_DASH;
+$login_cookie = $_COOKIE['login'];
+    if(isset($login_cookie)){
+      echo $content;
+    }else{
+      echo"Bem-Vindo, convidado <br>";
+      echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";
+      echo"<br><a href='login.html'>Faça Login</a> Para ler o conteúdo";
+    }
+
+
+
 ?>

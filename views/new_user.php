@@ -44,7 +44,7 @@ $data = <<<EOF
           <p class="card-category">Insira os dados com ATENÇÃO</p>
         </div>
         <div class="card-body">
-          <form action="../conect.php" method="POST">
+          <form action="conexao/conect.php" method="POST">
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
