@@ -67,6 +67,19 @@ $BASE_DASH= <<<EOF
               <p>Listagem de Produtos</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pagamentos_cadastro.php">
+              <i class="material-icons">attach_money</i>
+              <p>Cadastro de Pagamentos</p>
+            </a>
+          </li>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pagamentos_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Pagamentos</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

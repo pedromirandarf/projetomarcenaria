@@ -43,17 +43,17 @@ $content = <<<EOF
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item  ">
             <a class="nav-link" href="./clientes_cadastro.php">
               <i class="material-icons">face</i>
               <p>Cadastro de Clientes </p>
             </a>
           </li>
-          <li class="nav-item">
-          <a class="nav-link" href="./clientes_lista.php">
-            <i class="material-icons">content_paste</i>
-            <p>Listagem de Clientes</p>
-          </a>
+          <li class="nav-item active">
+            <a class="nav-link" href="./clientes_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Clientes</p>
+            </a>
           </li>
           <li class="nav-item ">
           <a class="nav-link" href="./produtos_cadastro.php">
@@ -65,6 +65,18 @@ $content = <<<EOF
             <a class="nav-link" href="./produtos_lista.php">
               <i class="material-icons">content_paste</i>
               <p>Listagem de Produtos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pagamentos_cadastro.php">
+              <i class="material-icons">attach_money</i>
+              <p>Cadastro de Pagamentos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pagamentos_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Pagamentos</p>
             </a>
           </li>
         </ul>
@@ -131,70 +143,33 @@ $content = <<<EOF
       
       <div class="content">
       <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h4 class="card-title">Novo Orçamento</h4>
-              <p class="card-category">Insira com Atenção os dados</p>
-            </div>
-            <div class="card-body">
-              <form action="conect_orcamentos.php" method="POST">
-                <div class="row"> 
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Data</label>
-                      <input type="date" name="Date" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Data de Vencimento</label>
-                      <input type="date" name="DataV" class="form-control">
-                    </div>
-                  </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Produtos</h4>
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">RG</label>
-                      <input type="text" name="RG" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">CPF</label>
-                      <input type="text" name="CPF" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Endereço</label>
-                      <input type="text" name="Endereco" class="form-control">
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Telefone (DDD)9XXXX-XXXX</label>
-                      <input type="text" name="Telefone" class="form-control" >
-                    </div>
-                  </div>
-                </div>
-                <br>
-                <br>
-                <button type="submit" class="btn btn-primary pull-left">Salvar</button>
-                <div class="clearfix"></div>
-              </form>
-            </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Produto
+                        </th>
+                        <th>
+                          Quantidade
+                        </th>
+                      </thead>
+EOF;
+
+
+$content2= <<<EOF
+                    
           </div>
         </div>
-        
-      </div>
-    </div>
       </div>
       <footer class="footer">
         <div class="container-fluid">
@@ -267,13 +242,87 @@ $content = <<<EOF
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
 </body>
-
 </html>
+EOF;
+
+$formulario= <<<EOF
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title">Novo Produto no Orçamento</h4>
+              <p class="card-category">Insira com Atenção os dados</p>
+            </div>
+            <div class="card-body">
+              <form action="conexao/conect_listas.php" method="POST">
+                <div class="row"> 
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Produto</label>
+                      <input type="text" name="Produto" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Quantidade</label>
+                      <input type="number" name="Quantidade" class="form-control">
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary pull-left">Salvar</button>
+                <div class="clearfix"></div>
+              </form>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
 EOF;
 
 $login_cookie = $_COOKIE['login'];
     if(isset($login_cookie)){
-      echo $content;
+      $conn = mysqli_connect('localhost','root','','marcenaria');
+      mysqli_set_charset($conn, 'utf8');
+
+if ($conn->connect_error) {
+  die("Por algum motivo a inscrição não foi efetuada, tente novamente mais tarde.");
+}
+$sql = "SELECT quantidade,email,rg,cpf,endereco,telefone FROM clientes";
+$resultado = $conn->query($sql);
+
+$aux = 1;
+while ($row = $resultado->fetch_assoc()){
+		$nome[$aux] = $row["nome"];
+		$email[$aux] = $row["email"];
+		$rg[$aux] = $row["rg"];
+		$cpf[$aux] = $row["cpf"];
+		$endereco[$aux] = $row["endereco"];
+		$telefone[$aux] = $row["telefone"];
+		$aux++;
+}
+$aux2 = 1;
+$aux = $aux -1;
+echo $content;
+echo "<tbody>";
+while($aux2!=($aux+1))
+{
+	echo "<tr><td>".$aux2."<td>".$nome[$aux2]."</td><td>".$email[$aux2]."</td><td>".$rg[$aux2]."</td><td>".$cpf[$aux2]."</td><td>".
+	$endereco[$aux2]."</td><td>".$telefone[$aux2]."</td><td></tr>";
+	$aux2++;
+}
+echo "</tbody>";
+echo $formulario;
+echo $content2;
     }else{
       echo"Bem-Vindo, convidado <br>";
       echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";

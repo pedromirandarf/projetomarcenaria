@@ -49,7 +49,7 @@ $content = <<<EOF
               <p>Cadastro de Clientes </p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="./clientes_lista.php">
               <i class="material-icons">content_paste</i>
               <p>Listagem de Clientes</p>
@@ -61,7 +61,7 @@ $content = <<<EOF
             <p>Cadastro de Produtos </p>
           </a>
         </li>
-        <li class="nav-item active">
+        <li class="nav-item">
             <a class="nav-link" href="./produtos_lista.php">
               <i class="material-icons">content_paste</i>
               <p>Listagem de Produtos</p>
@@ -73,7 +73,7 @@ $content = <<<EOF
               <p>Cadastro de Pagamentos</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="./pagamentos_lista.php">
               <i class="material-icons">content_paste</i>
               <p>Listagem de Pagamentos</p>
@@ -87,7 +87,7 @@ $content = <<<EOF
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Listagem de Produtos</a>
+            <a class="navbar-brand" href="#pablo">Pagamentos</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -147,7 +147,7 @@ $content = <<<EOF
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">Produtos Cadastrados</h4>
+                  <h4 class="card-title ">Pagamentos Recebidos</h4>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -157,31 +157,22 @@ $content = <<<EOF
                           ID
                         </th>
                         <th>
-                          Nome
+                          Data
                         </th>
                         <th>
-                          Serie
+                          Valor
                         </th>
                         <th>
-                          Lote
+                          F. Pagamento
                         </th>
                         <th>
-                          Tipo
+                          Funcionário
                         </th>
                         <th>
-                          Fornecedor
+                          Cliente
                         </th>
                         <th>
-                          Preço de Compra 
-                        </th>
-                        <th>
-                          Preço de Venda 
-                        </th>
-                        <th>
-                          Quantidade
-                        </th>
-                        <th>
-                          Observações
+                          Observação
                         </th>
                       </thead>
 EOF;
@@ -278,20 +269,17 @@ $login_cookie = $_COOKIE['login'];
 if ($conn->connect_error) {
   die("Por algum motivo a inscrição não foi efetuada, tente novamente mais tarde.");
 }
-$sql = "SELECT nome,serie,lote,tipo,fornecedor,preco_compra,preco_venda,quantidade,obs FROM produtos";
+$sql = "SELECT data,valor,obs,forma_pagamento,usuarios_id,clientes_id FROM pagamentos";
 $resultado = $conn->query($sql);
 
 $aux = 1;
 while ($row = $resultado->fetch_assoc()){
-		$nome[$aux] = $row["nome"];
-		$serie[$aux] = $row["serie"];
-		$lote[$aux] = $row["lote"];
-		$tipo[$aux] = $row["tipo"];
-		$fornecedor[$aux] = $row["fornecedor"];
-    $preco_compra[$aux] = $row["preco_compra"];
-    $preco_venda[$aux] = $row["preco_venda"];
-    $quantidade[$aux] = $row["quantidade"];
-    $obs[$aux] = $row["obs"];
+		$data[$aux] = $row["data"];
+		$valor[$aux] = $row["valor"];
+		$obs[$aux] = $row["obs"];
+		$forma[$aux] = $row["forma_pagamento"];
+		$usuario[$aux] = $row["usuarios_id"];
+		$cliente[$aux] = $row["clientes_id"];
 		$aux++;
 }
 $aux2 = 1;
@@ -300,8 +288,8 @@ echo $content;
 echo "<tbody>";
 while($aux2!=($aux+1))
 {
-	echo "<tr><td>".$aux2."<td>".$nome[$aux2]."</td><td>".$serie[$aux2]."</td><td>".$lote[$aux2]."</td><td>".$tipo[$aux2]."</td><td>".
-	$fornecedor[$aux2]."</td><td>".$preco_compra[$aux2]."</td><td>".$preco_venda[$aux2]."</td><td>".$quantidade[$aux2]."</td><td>".$obs[$aux2]."</td></tr>";
+	echo "<tr><td>".$aux2."<td>".$data[$aux2]."</td><td>".$valor[$aux2]."</td><td>".$forma[$aux2]."</td><td>".$usuario[$aux2]."</td><td>".
+	$cliente[$aux2]."</td><td>".$obs[$aux2]."</td><td></tr>";
 	$aux2++;
 }
 echo "</tbody>";

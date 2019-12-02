@@ -43,7 +43,7 @@ $content = <<<EOF
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item  ">
             <a class="nav-link" href="./clientes_cadastro.php">
               <i class="material-icons">face</i>
               <p>Cadastro de Clientes </p>
@@ -65,6 +65,18 @@ $content = <<<EOF
             <a class="nav-link" href="./produtos_lista.php">
               <i class="material-icons">content_paste</i>
               <p>Listagem de Produtos</p>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="./pagamentos_cadastro.php">
+              <i class="material-icons">attach_money</i>
+              <p>Cadastro de Pagamentos</p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./pagamentos_lista.php">
+              <i class="material-icons">content_paste</i>
+              <p>Listagem de Pagamentos</p>
             </a>
           </li>
         </ul>
