@@ -31,7 +31,7 @@ $content = <<<EOF
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo">
-        <a href="localhost/projetomarcenaria/" class="simple-text logo-normal">
+        <a href="dashboard.php" class="simple-text logo-normal">
           Marcenaria
         </a>
       </div>
