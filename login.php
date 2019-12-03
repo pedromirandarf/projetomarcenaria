@@ -5,7 +5,7 @@ $conn =new mysqli('localhost','root','','marcenaria');
 if ($conn->connect_error) {
             die("Por algum motivo a inscrição não foi efetuada, tente novamente mais tarde.");
         }
-echo $Login . " " . $Senha;
+        
   if (isset($Login)) {    
     $verifica = "SELECT * FROM usuarios WHERE email = '$Login' AND senha = '$Senha'";
       if (!$conn->query($verifica)){

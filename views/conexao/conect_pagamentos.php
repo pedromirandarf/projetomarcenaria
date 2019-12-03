@@ -26,7 +26,7 @@
         VALUES ('$Data','$Valor','$Obs','$Forma','$id_usuario','$id_cliente')";
         if($conn->query($sql))
         {
-            header("Location: pagamentos_cadastro.php");
+            header("Location: ../pagamentos_cadastro.php");
         }else 
         {echo "erro" . " " . mysqli_error($conn);}
     }

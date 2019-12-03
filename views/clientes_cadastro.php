@@ -151,7 +151,7 @@ $content = <<<EOF
               <p class="card-category">Insira com Atenção os dados</p>
             </div>
             <div class="card-body">
-              <form action="conect_clientes.php" method="POST">
+              <form action="conexao/conect_clientes.php" method="POST">
                 <div class="row"> 
                   <div class="col-md-6">
                     <div class="form-group">

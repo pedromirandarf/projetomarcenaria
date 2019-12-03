@@ -16,7 +16,7 @@
         $sql = "INSERT INTO clientes(nome,email,rg,cpf,endereco,telefone) VALUES ('$Nome','$Email','$RG','$CPF','$Endereco','$Telefone')";
         if($conn->query($sql))
         {
-            header("Location: clientes_cadastro.php");
+            header("Location: ../clientes_cadastro.php");
         }else 
         {echo "erro" . " " . mysqli_error($conn);}
     }
