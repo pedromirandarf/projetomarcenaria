@@ -65,16 +65,12 @@ $BASE_LOGIN = <<<EOF
                              <label for="mantenhaconectado">Me Mantenha Conectado</label>
                           </div>
                         <button type="submit" class="btn btn-primary">Entrar</button>
-                        <button class="btn btn-primary">Esqueci a Senha</button>
-                      
 
-                        
                       </form>
                       <a class="link" href="views/new_user.php">
                           <i class="material-icons">person</i>
                           <p>Cadastro</p>
                         </a>
-                        <a class="btn btn-primary btn-round" target ="_blank" href="https://www.youtube.com/embed/SFJIn1GCWrQ">Tutorial</a>
                      
                       
                               
