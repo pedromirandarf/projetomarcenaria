@@ -38,7 +38,7 @@ $content = <<<EOF
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="dashboard.php">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
@@ -107,7 +107,7 @@ $content = <<<EOF
                 </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">5</span>
                   <p class="d-lg-none d-md-block">
@@ -123,7 +123,7 @@ $content = <<<EOF
                 </div>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="../index.php" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
                   <p class="d-lg-none d-md-block">
                     Account
@@ -143,8 +143,8 @@ $content = <<<EOF
       <!-- End Navbar -->
       
       <div class="content">
-<div class="container-fluid">
-<div class="row">
+        <div class="container-fluid">
+        <div class="row">
   <div class="col-lg-3 col-md-6 col-sm-6">
     <div class="card card-stats">
       <div class="card-header card-header-primary card-header-icon">
@@ -322,7 +322,6 @@ $footer = <<< EOF
   <script src="../assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
   <!-- Material Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
-</body>
 
 </html>
 EOF;
@@ -375,7 +374,7 @@ $login_cookie = $_COOKIE['login'];
     $aux2++;
   }
   echo "</tbody>  </table>  </div></div></div></div></div>";
-    
+    echo $footer;
     }else{
       echo"Bem-Vindo, convidado <br>";
       echo"Essas informações <font color='red'>NÃO PODEM</font> ser acessadas por você";
