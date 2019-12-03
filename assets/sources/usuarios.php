@@ -16,29 +16,31 @@ class Usuarios{
 
     }
 
-    function insereUsuario()
+
+    function insereUsuario(Usuario $usuario)
     {
-        $usuario = new Usuario;();
+        if(isset($_POST['Email']))
+        {
+            $conn =new mysqli('localhost','root','','marcenaria');
+            if ($conn->connect_error) {
+                die("Por algum motivo a inscrição não foi efetuada, tente novamente mais tarde.");
+            }
+           
 
-
-        $usuario.nome = $_POST["nome"];
-        $usuario.email = $_POST["email"];
-        $usuario.cpf = $_POST["cpf"];
-        $usuario.senha = $_POST["senha"];
-
-        $this->insereUsuarioBD($cliente);
-    }
-
-    function insereUsuarioBD(Usuario $usuario)
-    {
-        $con = mysql_connect('localhost','root','');
-        mysql_select_db('marcenaria_bd', $con)
-
-        $query = "INSERT INTO usuarios (nome, senha, cpf, endereco) VALUES ('$usuarios.nome', 
-        '$usuarios.senha', '$usuarios.cpf','$usuarios.endereco') ";
-        $result = mysql_query($query);
-        
-        if ($result)
+            
+            
+            $Email = $_POST['Email'];
+            $Nome = $_POST['Nome'];
+            $Senha = md5($_POST['Senha']);
+            $Endereco = $_POST['Endereco'];
+            $CPF = $_POST['CPF'];
+            $sql = "INSERT INTO usuarios(nome,senha,cpf,endereco,email) VALUES ('$Nome','$Senha','$CPF','$Endereco','$Email')";
+            if($conn->query($sql))
+            {
+                header("Location: ../../index.php");
+            }else 
+            {echo "erro" . " " . mysqli_error($conn);}
+        }
         
     }
 

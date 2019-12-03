@@ -20,33 +20,37 @@ class Clientes{
 
     }
 
-    function insereCliente()
+    function insereCliente(Clientes $cliente)
     {
-        $cliente = new Cliente();
 
-
-        $cliente.nome = $_POST["nome"];
-        $cliente.email = $_POST["email"];
-        $cliente.cpf = $_POST["cpf"];
-        $cliente.rg = $_POST["rg"];
-        $cliente.telefone = $_POST["telefone"];
-        $cliente.endereco = $_POST["endereco"];
-
-        $this.insereClienteBD($cliente);
-    }
-
-    function insereClienteBD(Clientes $cliente)
-    {
-        $con = mysql_connect('localhost','root','');
-        mysql_select_db('marcenaria_bd', $con)
-
-        $query = "INSERT INTO clientes (nome, email, rg, cpf, endereco, telefone) VALUES ('$clientes.nome', 
-        '$clientes.email', '$clientes.rg','$clientes.cpf', '$clientes.endereco', '$clientes.telefone')";
-        $result = mysql_query($query);
+        $conn =new mysqli('localhost','root','','marcenaria');
+        if ($conn->connect_error) {
+            die("Por algum motivo a inscrição não foi efetuada, tente novamente mais tarde.");
+        }
         
-        if ($result)
+
+        $Email = $cliente->email;
+        $Nome = $cliente->nome;
+        $RG = $cliente->rg;
+        $Endereco = $cliente->endereco;
+        $CPF = $cliente->cpf;
+        $Telefone = $cliente->telefone;
+        $sql = "INSERT INTO clientes(nome,email,rg,cpf,endereco,telefone) VALUES ('$Nome','$Email','$RG','$CPF','$Endereco','$Telefone')";
+        
+        if($conn->query($sql))
+        {
+            header("Location: clientes_cadastro.php");
+        }else 
+        {echo "erro" . " " . mysqli_error($conn);}
+
+       
+    }
+
+    function pesquisaCliente (Clientes $cliente)
+    {
 
     }
+
 }
 
 

@@ -27,13 +27,29 @@ class Produtos{
     
     function insereProdutoBD(Produtos $produto)
     {
-        $con = mysql_connect('localhost','root','');
-        mysql_select_db('marcenaria_bd', $con)
-
-        $query = "INSERT INTO produtos (nome, serie, lote, tipo, fornecedor, preco_compra, preco_venda, quantidade, obs) 
-        VALUES ('$produto.nome', '$produto.serie', '$produto.lote', '$produto.tipo','$produto.fornecedor',
-        '$produto.precoCompra', '$produto.precoVenda', '$produto.quantidade', '$produto.obs') ";
-        $result = mysql_query($query);
+        $conn =new mysqli('localhost','root','','marcenaria');
+        
+        if ($conn->connect_error) {
+            die("Por algum motivo a inscrição não foi efetuada, tente novamente mais tarde.");
+        }
+        
+        $Nome = $produto->nome;
+        $Serie = $produto->serie;
+        $Lote = $produto->lote;
+        $Tipo = $produto->tipo;
+        $Fornecedor = $produto->fornecedor;
+        $PrecoC = $produto->precoCompra;
+        $PrecoV = $produto->precoVenda;
+        $Quantidade = $produto->quantidade;
+        $Obs = $produto->obs;
+        $sql = "INSERT INTO produtos(nome,serie,lote,tipo,fornecedor,preco_compra,preco_venda,quantidade,obs) 
+        VALUES ('$Nome','$Serie','$Lote','$Tipo','$Fornecedor','$PrecoC','$PrecoV','$Quantidade','$Obs')";
+        if($conn->query($sql))
+        {
+            header("Location: ../produtos_cadastro.php");
+        }else 
+        {echo "erro" . " " . mysqli_error($conn);}
+    }
     }
 }
 
